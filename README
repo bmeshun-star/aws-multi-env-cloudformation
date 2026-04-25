@@ -4,32 +4,33 @@
 This project demonstrates the deployment of a scalable, multi-tier AWS infrastructure using **CloudFormation**. I designed a single, reusable YAML template capable of provisioning isolated environments for **Development, Testing, and Production** with a single click.
 
 ## :building_construction: Key Features
+
 **Dynamic Infrastructure:** Utilized CloudFormation **Parameters** and **Intrinsic Functions** (`!If`, `!Sub`, `!Ref`) to customize resources per environment.
 **Network Isolation:** Each environment is deployed into a dedicated VPC with non-overlapping CIDR blocks to ensure security and prevent routing conflicts.
 **Resource Standardization:** Implemented a strict tagging and naming convention (`${EnvironmentName}-server`) to ensure infrastructure is audit-ready and organized.
 
+
 ## :hammer_and_wrench: Tech Stack
+
 **IaC:** AWS CloudFormation (YAML)
 **Compute:** AWS EC2 (t2.micro)
 **Networking:** AWS VPC, Subnets, Internet Gateways, Route Tables
 **Security:** AWS Security Groups (SSH & HTTP access)
+
 
 ## :camera_with_flash: Technical Evidence
 
 ### 1. Orchestration Dashboard
 Proof of the reusable template successfully deploying three independent stacks.
 ![Stacks Dashboard](screenshots/stacks-complete.jpeg)
-*The CloudFormation dashboard showing Dev, Test, and Prod stacks in a CREATE_COMPLETE state.*
 
 ### 2. Network Segmentation
 Evidence of conditional logic applied to networking, ensuring isolated IP spaces for each environment.
 ![Networking](screenshots/vpc-setup.jpeg)
-*Comparison of CIDR blocks: 10.0.0.0/16 (Dev), 10.1.0.0/16 (Test), and 10.2.0.0/16 (Prod).*
 
 ### 3. Resource Tagging & Metadata
 Demonstrating that the logic correctly assigned environment-specific tags to the resources.
-![Production Tag](screenshots/prod-tag.jpeg)
-*The EC2 console showing the Production instance correctly tagged as "prod-server".*
+![Production Tag](screenshots/prod-tag.png)
 
 ---
 
@@ -39,16 +40,11 @@ During the initial deployment of the **Production** stack, the creation failed w
 **Issue:** The template was originally configured to request a `t2.small` instance for Production. However, the AWS account was restricted to **Free Tier eligible** types only.
 
 **Resolution:** 
+
 **Analysis:** Analyzed the CloudFormation event logs to identify the "Likely root cause."
 **Cleanup:** Deleted the failed stack to clear the resource state.
 **Refactoring:** Updated the YAML logic to standardize on `t2.micro` while maintaining the advanced networking logic.
 **Validation:** Successfully redeployed, proving the ability to debug and iterate on IaC templates.
 
+
 ![Error Log](screenshots/prod-error.jpeg)
-
----
-
-## :rocket: How to Run
-Upload the `template.yaml` to the CloudFormation Console.
-Select the desired `EnvironmentName` (dev, test, or prod).
-Click **Submit**. CloudFormation handles the rest.
