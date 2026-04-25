@@ -7,7 +7,7 @@ This project demonstrates the deployment of a scalable, multi-tier AWS infrastru
 
 **Dynamic Infrastructure:** Utilised CloudFormation **Parameters** and **Intrinsic Functions** (`!If`, `!Sub`, `!Ref`) to customise resources per environment.
 **Network Isolation:** Each environment is deployed into a dedicated VPC with non-overlapping CIDR blocks to ensure security and prevent routing conflicts.
-**Resource Standardization:** Implemented a strict tagging and naming convention (`${EnvironmentName}-server`) to ensure infrastructure is audit-ready and organised.
+**Resource Standardisation:** Implemented a strict tagging and naming convention (`${EnvironmentName}-server`) to ensure infrastructure is audit-ready and organised.
 
 
 ## :hammer_and_wrench: Tech Stack
