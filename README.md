@@ -5,9 +5,9 @@ This project demonstrates the deployment of a scalable, multi-tier AWS infrastru
 
 ## :building_construction: Key Features
 
-**Dynamic Infrastructure:** Utilized CloudFormation **Parameters** and **Intrinsic Functions** (`!If`, `!Sub`, `!Ref`) to customize resources per environment.
+**Dynamic Infrastructure:** Utilised CloudFormation **Parameters** and **Intrinsic Functions** (`!If`, `!Sub`, `!Ref`) to customise resources per environment.
 **Network Isolation:** Each environment is deployed into a dedicated VPC with non-overlapping CIDR blocks to ensure security and prevent routing conflicts.
-**Resource Standardization:** Implemented a strict tagging and naming convention (`${EnvironmentName}-server`) to ensure infrastructure is audit-ready and organized.
+**Resource Standardization:** Implemented a strict tagging and naming convention (`${EnvironmentName}-server`) to ensure infrastructure is audit-ready and organised.
 
 
 ## :hammer_and_wrench: Tech Stack
@@ -41,9 +41,9 @@ During the initial deployment of the **Production** stack, the creation failed w
 
 **Resolution:** 
 
-**Analysis:** Analyzed the CloudFormation event logs to identify the "Likely root cause."
+**Analysis:** Analysed the CloudFormation event logs to identify the "Likely root cause."
 **Cleanup:** Deleted the failed stack to clear the resource state.
-**Refactoring:** Updated the YAML logic to standardize on `t2.micro` while maintaining the advanced networking logic.
+**Refactoring:** Updated the YAML logic to standardise on `t2.micro` while maintaining the advanced networking logic.
 **Validation:** Successfully redeployed, proving the ability to debug and iterate on IaC templates.
 
 
