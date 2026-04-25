@@ -18,7 +18,7 @@ This project demonstrates the deployment of a scalable, multi-tier AWS infrastru
 **Security:** AWS Security Groups (SSH & HTTP access)
 
 
-## :camera_with_flash: Technical Evidence
+## Technical Evidence
 
 ### 1. Orchestration Dashboard
 Proof of the reusable template successfully deploying three independent stacks.
