@@ -1,0 +1,13 @@
+## Infrastructure as Code
+
+This project uses AWS CloudFormation to provision multiple environments (Dev, Test, Production) using a single reusable template.
+
+## Key Features
+
+Parameterised environments
+Automated infrastructure provisioning
+Environment isolation via separate VPCs
+
+
+## Why this matters
+Infrastructure as Code ensures consistency, reduces manual errors, and reflects real-world cloud engineering practices.
